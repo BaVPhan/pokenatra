@@ -1,0 +1,13 @@
+<h1><%=@pokemon.name%></h1>
+<div class="pokemon">
+  <p><a href="/pokemon">GO BACK</a></p>
+  <p><a href="/pokemon/<%=@pokemon.id%>/edit">EDIT THIS POKEMON</a></p>
+  <p>CP: <%=@pokemon.cp%><p>
+  <p>Type: <%= @pokemon.poke_type%></p>
+  <img src="<%=@pokemon.img_url%>">
+</div>
+
+<form action="/pokemon/<%= @pokemon.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Release to the wild">
+</form>
